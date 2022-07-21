@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# url patterns for whole project
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # this comes from the subproject "/polls"
     path('polls/', include('polls.urls')),
 ]
