@@ -16,10 +16,12 @@ def index(request):
 
 
 def detail(request, question_id):
+    '''
     try:
         question = Question.objects.get(pk=question_id)
     except Question.DoesNotExist:
         raise Http404("Question does not exist")
+    '''
     # the above is equivalent to:
     question = get_object_or_404(Question, pk=question_id)
     context = {
